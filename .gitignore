@@ -1,35 +1,74 @@
-## Build results
+# Build output folders
 bin/
 obj/
-build/
 out/
 
-## User-specific files
-*.rsuser
+# Visual Studio / Rider / VSCode files
+.vs/
+.vscode/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-## Visual Studio
-.vs/
-.vscode/
-
-## NuGet
+# NuGet packages
 *.nupkg
-*.snupkg
 packages/
-project.lock.json
-project.fragment.lock.json
-artifacts/
+.nuget/
 
-## ASP.NET
-*.dbmdl
+# Logs
 *.log
-*.sql
-*.pdb
 
-## Others
-*.DS_Store
+# Dotnet tool files
+*.dotnet_tools.json
+
+# User-specific files
+*.rsuser
+*.resharper
+*.sln.ide
+
+# ASP.NET temporary files
+aspnet_client/
+
+# Publish output
+publish/
+
+# Docker files
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# Configuration secrets (usar variables de entorno en producción)
+appsettings.*.json
+secrets.json
+
+# IIS / Web server files
+*.vspscc
+*.vssscc
+
+# Others
+*.dbmdl
+*.bak
+*.backup
+
+# JetBrains Rider
+.idea/
+
+# Mac files
+.DS_Store
+
+# Windows thumbnail cache files
 Thumbs.db
+
+# Recycle Bin used by Windows Explorer
+$RECYCLE.BIN/
+
+# npm packages if you use node in the project
+node_modules/
+
+# npm logs
+npm-debug.log*
+
+# Environment variables files - si usas .env
+.env
+
 
