@@ -1,0 +1,9 @@
+wwwroot\ImagenesPeliculas\0a5fa59f3-7da7-4e0e-be48-97b45e44df9b.jpg
+wwwroot\ImagenesPeliculas\382e38d5-756b-4723-9eb0-244554984b49.jpg
+wwwroot\ImagenesPeliculas\5b2a18a2-c4cd-43fd-8184-3cbca2091ef9.jpeg
+wwwroot\ImagenesPeliculas\996300c9-15ec-49cf-ae7f-bceff0917e66.jpg
+wwwroot\ImagenesPeliculas\cd1aded1-db97-421d-8fe3-99d8fc3d3a0a.jpg
+wwwroot\ImagenesPeliculas\d4bfaa44-7386-48bb-9b15-fa30e7a6d9f3.jpg
+wwwroot\ImagenesPeliculas\dabc60dd-24e9-44d1-9654-39d58d513ea8.jpg
+wwwroot\ImagenesPeliculas\e4ac87a0-ccd3-4111-982a-2c0cee6ecaa7.jpg
+wwwroot\ImagenesPeliculas\e53c003d-e8b9-4e67-a81f-1f8bff4a141c.jpg

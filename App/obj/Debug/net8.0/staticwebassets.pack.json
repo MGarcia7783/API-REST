@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\0a5fa59f3-7da7-4e0e-be48-97b45e44df9b.jpg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\0a5fa59f3-7da7-4e0e-be48-97b45e44df9b.jpg"
+    },
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\382e38d5-756b-4723-9eb0-244554984b49.jpg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\382e38d5-756b-4723-9eb0-244554984b49.jpg"
+    },
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\5b2a18a2-c4cd-43fd-8184-3cbca2091ef9.jpeg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\5b2a18a2-c4cd-43fd-8184-3cbca2091ef9.jpeg"
+    },
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\996300c9-15ec-49cf-ae7f-bceff0917e66.jpg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\996300c9-15ec-49cf-ae7f-bceff0917e66.jpg"
+    },
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\cd1aded1-db97-421d-8fe3-99d8fc3d3a0a.jpg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\cd1aded1-db97-421d-8fe3-99d8fc3d3a0a.jpg"
+    },
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\d4bfaa44-7386-48bb-9b15-fa30e7a6d9f3.jpg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\d4bfaa44-7386-48bb-9b15-fa30e7a6d9f3.jpg"
+    },
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\dabc60dd-24e9-44d1-9654-39d58d513ea8.jpg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\dabc60dd-24e9-44d1-9654-39d58d513ea8.jpg"
+    },
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\e4ac87a0-ccd3-4111-982a-2c0cee6ecaa7.jpg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\e4ac87a0-ccd3-4111-982a-2c0cee6ecaa7.jpg"
+    },
+    {
+      "Id": "C:\\Programacion\\Csharp\\API-REST\\Peliculas\\Autenticacion_Identity\\Peliculas\\App\\wwwroot\\ImagenesPeliculas\\e53c003d-e8b9-4e67-a81f-1f8bff4a141c.jpg",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\e53c003d-e8b9-4e67-a81f-1f8bff4a141c.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.App.props",
+      "PackagePath": "build\\App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.App.props",
+      "PackagePath": "buildMultiTargeting\\App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.App.props",
+      "PackagePath": "buildTransitive\\App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
