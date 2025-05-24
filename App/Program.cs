@@ -15,17 +15,33 @@ using App.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Cargar valores de conexion
+DotNetEnv.Env.Load();
+
+//Leer variables de entorno
+var host = Environment.GetEnvironmentVariable("DB_HOST");
+var port = Environment.GetEnvironmentVariable("DB_PORT");
+var database = Environment.GetEnvironmentVariable("DB_NAME");
+var user = Environment.GetEnvironmentVariable("DB_USER");
+var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
+
+// Construir la cadena
+var connectionString = $"Host={host};Port={port};Database={database};Username={user};Password={password}";
+
+/*
 //Registrar conexion a base de datos
 var connectionString = builder.Configuration.GetConnectionString("Connection");
 if (string.IsNullOrEmpty(connectionString))
 {
     throw new InvalidOperationException("La cadena de conexión 'Connection' no está configurada.");
-}
+}*/
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(connectionString);
 });
+
+
 
 
 //Soporte para autenticación con .NET Identity

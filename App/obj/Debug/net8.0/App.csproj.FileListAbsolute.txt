@@ -131,3 +131,6 @@ C:\Programacion\Csharp\API-REST\Peliculas\Autenticacion_Identity\Peliculas\App\b
 C:\Programacion\Csharp\API-REST\Peliculas\Autenticacion_Identity\Peliculas\App\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Programacion\Csharp\API-REST\Peliculas\Autenticacion_Identity\Peliculas\App\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Programacion\Csharp\API-REST\Peliculas\Autenticacion_Identity\Peliculas\App\bin\Debug\net8.0\App.staticwebassets.runtime.json
+C:\Programacion\Csharp\API-REST\Peliculas\Autenticacion_Identity\Peliculas\App\bin\Debug\net8.0\DotNetEnv.dll
+C:\Programacion\Csharp\API-REST\Peliculas\Autenticacion_Identity\Peliculas\App\bin\Debug\net8.0\Sprache.dll
+C:\Programacion\Csharp\API-REST\Peliculas\Autenticacion_Identity\Peliculas\App\obj\Debug\net8.0\App.sourcelink.json
