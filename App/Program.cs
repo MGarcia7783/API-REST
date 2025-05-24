@@ -1,4 +1,4 @@
-using App.Data;
+Ôªøusing App.Data;
 using App.Repositorio.IRepositorio;
 using App.Repositorio;
 using Asp.Versioning;
@@ -18,6 +18,10 @@ var builder = WebApplication.CreateBuilder(args);
 //Cargar valores de conexion
 DotNetEnv.Env.Load();
 
+//Agregar variables de entorno a la configuraci√≥n para poder leerlas desde builder.Configuration
+builder.Configuration.AddEnvironmentVariables();
+
+
 //Leer variables de entorno
 var host = Environment.GetEnvironmentVariable("DB_HOST");
 var port = Environment.GetEnvironmentVariable("DB_PORT");
@@ -28,14 +32,6 @@ var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
 // Construir la cadena
 var connectionString = $"Host={host};Port={port};Database={database};Username={user};Password={password}";
 
-/*
-//Registrar conexion a base de datos
-var connectionString = builder.Configuration.GetConnectionString("Connection");
-if (string.IsNullOrEmpty(connectionString))
-{
-    throw new InvalidOperationException("La cadena de conexiÛn 'Connection' no est· configurada.");
-}*/
-
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(connectionString);
@@ -43,11 +39,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 
 
-
-//Soporte para autenticaciÛn con .NET Identity
+//Soporte para autenticaci√≥n con .NET Identity
 builder.Services.AddIdentity<Usuario, IdentityRole>(options =>
 {
-    //No quiero que Identity aplique reglas autom·ticas a las contraseÒas.
+    //No quiero que Identity aplique reglas autom√°ticas a las contrase√±as.
     options.Password.RequireDigit = false;
     options.Password.RequiredLength = 1;
     options.Password.RequireNonAlphanumeric = false;
@@ -59,8 +54,8 @@ builder.Services.AddIdentity<Usuario, IdentityRole>(options =>
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
-//Registrar el validador de contraseÒa
-//Yo me encargo de validar las contraseÒas con esta clase personalizada
+//Registrar el validador de contrase√±a
+//Yo me encargo de validar las contrase√±as con esta clase personalizada
 builder.Services.AddTransient<IPasswordValidator<Usuario>, ValidarPassword>();
 
 
@@ -88,15 +83,19 @@ builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
 
 
-//Soporte para la clave secreta
-var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
+//Soporte para leer la clave secreta JWT desde las variables de entornoay
+var key = Environment.GetEnvironmentVariable("API_SECRETA");
+
+
 if (string.IsNullOrWhiteSpace(key))
 {
-    throw new InvalidOperationException("La clave JWT (ApiSettings:Secreta) no est· configurada correctamente.");
+    throw new InvalidOperationException("La clave JWT (ApiSettings:Secreta) no est√° configurada correctamente.");
 }
 
+var keyBytes = Encoding.ASCII.GetBytes(key);
 
-// Aqui se configura la autenticaciÛn
+
+// Aqui se configura la autenticaci√≥n
 builder.Services.AddAuthentication
     (
         x =>
@@ -111,7 +110,7 @@ builder.Services.AddAuthentication
         x.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
+            IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
             ValidateIssuer = false,
             ValidateAudience = false,
             RoleClaimType = ClaimTypes.Role
@@ -123,7 +122,7 @@ builder.Services.AddAuthentication
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
-//Registrar controladores
+//Registrar controladores y Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -131,8 +130,8 @@ builder.Services.AddSwaggerGen(options =>
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description =
-        "AutenticaciÛn JWT usando el esquema Bearer. \r\n\r\n " +
-        "Ingresa la palabra 'Bearer' seguido de un [espacio] y despuÈs su token en el campo de abajo.\r\n\r\n" +
+        "Autenticaci√≥n JWT usando el esquema Bearer. \r\n\r\n " +
+        "Ingresa la palabra 'Bearer' seguido de un [espacio] y despu√©s su token en el campo de abajo.\r\n\r\n" +
         "Ejemplo: \"Bearer tkljk125jhhk\"",
         Name = "Authorization",
         In = ParameterLocation.Header,
@@ -159,7 +158,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1.0",
         Title = "Peliculas Api V1",
-        Description = "Api de Peliculas VersiÛn 1",
+        Description = "Api de Peliculas Versi√≥n 1",
         TermsOfService = new Uri("https://render2web.com/promociones"),
         Contact = new OpenApiContact
         {
@@ -177,7 +176,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v2.0",
         Title = "Peliculas Api V2",
-        Description = "Api de Peliculas VersiÛn 2",
+        Description = "Api de Peliculas Versi√≥n 2",
         TermsOfService = new Uri("https://render2web.com/promociones"),
         Contact = new OpenApiContact
         {
@@ -204,22 +203,22 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(opciones =>
     {
-        opciones.SwaggerEndpoint("/swagger/v1/swagger.json", "APIPelÌculasV1");
-        opciones.SwaggerEndpoint("/swagger/v2/swagger.json", "APIPelÌculasV2");
+        opciones.SwaggerEndpoint("/swagger/v1/swagger.json", "APIPel√≠culasV1");
+        opciones.SwaggerEndpoint("/swagger/v2/swagger.json", "APIPel√≠culasV2");
     });
 }
 
 
 
-// Soporte para archivos est·ticos como im·genes
+// Soporte para archivos est√°ticos como im√°genes
 app.UseStaticFiles();
 
 
-// Usar middleware para HTTPS Redirection y autorizaciÛn
+// Usar middleware para HTTPS Redirection y autorizaci√≥n
 app.UseHttpsRedirection();
 
 
-// Soporte para autenticaciÛn
+// Soporte para autenticaci√≥n
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -228,5 +227,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 
-// Ejecutar la aplicaciÛn
+// Ejecutar la aplicaci√≥n
 app.Run();

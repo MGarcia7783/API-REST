@@ -29,7 +29,7 @@ namespace App.Repositorio
         public UsuarioRepositorio(ApplicationDbContext db, IConfiguration config, UserManager<Usuario> userManager, RoleManager<IdentityRole> roleManager, IMapper mapper)
         {
             _db = db;
-            claveSecreta = config.GetValue<string>("ApiSettings:Secreta")
+            claveSecreta = config.GetValue<string>("API_SECRETA")
                 ?? throw new InvalidOperationException("La clave secreta no está configurada.");
             _userManager = userManager;
             _roleManager = roleManager;
